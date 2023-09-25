@@ -3,8 +3,8 @@ import HtttpStatusCode from "../exceptions/HttpStatusCode.js";
 import { studentRepository } from "../repositories/index.js";
 
 const getAllStudents = async (req, res) => {
-  console.log(req.body);
-  let { page = 1, size = MAX_RECORDS, searchString = "" } = req.query;
+  console.log(req.body, req.params, req.query);
+  let { page = 1, size = MAX_RECORDS, searchString = "" } = req.body;
   size = size >= MAX_RECORDS ? MAX_RECORDS : size;
   try {
     let filteredStudent = await studentRepository.getAllStudents({

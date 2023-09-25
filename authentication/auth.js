@@ -4,7 +4,7 @@ export default function checkToken(req, res, next) {
   if (
     req.url.toLowerCase().trim() == "/users/login".toLowerCase().trim() ||
     req.url.toLowerCase().trim() == "/users/register".toLowerCase().trim() ||
-    req.url.toLowerCase().trim() == "/students".toLowerCase().trim()
+    req.url.toLowerCase().trim() == "/students/getAll".toLowerCase().trim()
   ) {
     next();
     return;
